@@ -6,7 +6,7 @@ import { userId, nickname } from '../window'
 import reducers from './index'
 import { ME } from '../constants'
 import { setNicknames, removeNickname } from '../actions/NicknameActions'
-import { getLocalNickname } from '../reducers/nicknames'
+import { getLocalNickname } from './nicknames'
 
 describe('reducers/nicknames', () => {
 
