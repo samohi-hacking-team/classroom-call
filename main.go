@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"log"
 	"net"
 	"net/http"
 	"os"
@@ -15,6 +16,8 @@ import (
 var gitDescribe string = "v0.0.0"
 
 func configure(loggerFactory *logger.Factory, args []string) (net.Listener, *server.StartStopper, error) {
+	log.Println("Starting CONFIG")
+
 	log := loggerFactory.GetLogger("main")
 
 	flags := flag.NewFlagSet("peer-calls", flag.ExitOnError)
@@ -41,9 +44,13 @@ func configure(loggerFactory *logger.Factory, args []string) (net.Listener, *ser
 		return nil, nil, fmt.Errorf("Error starting server listener: %w", err)
 	}
 	startStopper := server.NewStartStopper(server.ServerParams{
-		TLSCertFile: c.TLS.Cert,
-		TLSKeyFile:  c.TLS.Key,
+		// TLSCertFile: c.TLS.Cert,
+		// TLSKeyFile:  c.TLS.Key,
+		TLSCertFile: "./config/cert.pem",
+		TLSKeyFile:  "./config/key.pem",
 	}, mux)
+	log.Println("ENDING CONFIG")
+
 	return l, startStopper, nil
 }
 
@@ -63,6 +70,7 @@ func start(args []string) (addr *net.TCPAddr, stop func() error, errChan <-chan 
 	log := loggerFactory.GetLogger("main")
 
 	ch := make(chan error, 1)
+	log.Println("ABOUT TO CONFIGURE")
 	l, startStopper, err := configure(loggerFactory, args)
 	if err != nil {
 		ch <- err
