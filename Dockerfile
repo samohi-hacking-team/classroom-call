@@ -20,6 +20,9 @@ COPY .git .git
 COPY res res
 COPY server server
 COPY main.go .
+COPY key.pem .
+COPY cert.pem .
+
 RUN packr build -ldflags "-X main.gitDescribe=$(git describe --always --tags)" -o peer-calls main.go
 
 FROM debian:buster-slim
