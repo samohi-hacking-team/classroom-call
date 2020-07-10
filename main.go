@@ -44,10 +44,10 @@ func configure(loggerFactory *logger.Factory, args []string) (net.Listener, *ser
 		return nil, nil, fmt.Errorf("Error starting server listener: %w", err)
 	}
 	startStopper := server.NewStartStopper(server.ServerParams{
-		// TLSCertFile: c.TLS.Cert,
-		// TLSKeyFile:  c.TLS.Key,
-		TLSCertFile: "./config/cert.pem",
-		TLSKeyFile:  "./config/key.pem",
+		TLSCertFile: c.TLS.Cert,
+		TLSKeyFile:  c.TLS.Key,
+		// TLSCertFile: "./config/cert.pem",
+		// TLSKeyFile:  "./config/key.pem",
 	}, mux)
 	log.Println("ENDING CONFIG")
 
