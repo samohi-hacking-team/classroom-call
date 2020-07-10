@@ -11,7 +11,6 @@ import { Message } from '../reducers/messages'
 import { Nicknames } from '../reducers/nicknames'
 import { StreamsState } from '../reducers/streams'
 import { WindowStates } from '../reducers/windowStates'
-import Chat from './Chat'
 import { Media } from './Media'
 import Notifications from './Notifications'
 import Toolbar from './Toolbar'
@@ -76,10 +75,7 @@ export default class App extends React.PureComponent<AppProps, AppState> {
       dismissNotification,
       notifications,
       nicknames,
-      messages,
       messagesCount,
-      sendFile,
-      sendText,
     } = this.props
 
     const chatVisibleClassName = classnames({
@@ -106,14 +102,7 @@ export default class App extends React.PureComponent<AppProps, AppState> {
           dismiss={dismissNotification}
           notifications={notifications}
         />
-        <Chat
-          messages={messages}
-          nicknames={nicknames}
-          onClose={this.handleHideChat}
-          sendText={sendText}
-          sendFile={sendFile}
-          visible={this.state.chatVisible}
-        />
+
         <Media />
         {this.props.dialState !== constants.DIAL_STATE_HUNG_UP &&
           <Videos

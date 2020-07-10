@@ -20,14 +20,16 @@ COPY .git .git
 COPY res res
 COPY server server
 COPY main.go .
-COPY key.pem .
-COPY cert.pem .
+RUN go build -o peer-calls main.go
+COPY ./cert.pem ./
+COPY ./key.pem ./
+COPY ./broke.guru/private.key ./
+COPY ./broke.guru/certificate.crt ./
 
-RUN packr build -ldflags "-X main.gitDescribe=$(git describe --always --tags)" -o peer-calls main.go
 
 FROM debian:buster-slim
 WORKDIR /app
-COPY --from=1 /app/peer-calls .
+COPY --from=1 /app/ .
 USER nobody
 EXPOSE 3000
 STOPSIGNAL SIGINT

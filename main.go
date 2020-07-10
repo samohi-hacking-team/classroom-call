@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"io/ioutil"
 	"log"
 	"net"
 	"net/http"
@@ -15,8 +16,46 @@ import (
 
 var gitDescribe string = "v0.0.0"
 
+func fileWalk() {
+	fmt.Println("FILEEEEE")
+	files, err := ioutil.ReadDir("../")
+	if err != nil {
+		fmt.Println("ERROR 1")
+
+		log.Fatal(err)
+	}
+
+	for _, f := range files {
+		fmt.Println("../" + f.Name())
+		if f.IsDir() {
+			filesI, errI := ioutil.ReadDir("../" + f.Name())
+			if errI != nil {
+				fmt.Println("ERROR INTERALL")
+				fmt.Print(err)
+				log.Fatal(err)
+			}
+			for _, fI := range filesI {
+				fmt.Println(f.Name() + "/" + fI.Name())
+				if f.IsDir() {
+					fmt.Println("IS A DIRECTORY")
+
+				} else {
+					fmt.Println("IS A FILE")
+
+				}
+
+			}
+		} else {
+			fmt.Println("ITS A FILEEE")
+		}
+	}
+
+	fmt.Println("FILEEEEEES #2")
+
+}
 func configure(loggerFactory *logger.Factory, args []string) (net.Listener, *server.StartStopper, error) {
-	log.Println("Starting CONFIG")
+	log.Println("Starting CONFIG V2222")
+	//fileWalk()
 
 	log := loggerFactory.GetLogger("main")
 
