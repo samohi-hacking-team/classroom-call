@@ -56,6 +56,9 @@ socket.on('connect', () => {
             'local track', track.id, track.label,
             'muted?', track.muted, 'enabled?', track.enabled)
           peer.addTrack(track, stream)
+          console.log('PEARS TASTE GOOD')
+          console.log(peer)
+
         })
 
       })
@@ -92,6 +95,7 @@ socket.on('connect', () => {
     room: callId,
     nickname: 'test',
     userId,
+    isTeacher: false,
   })
 
 })

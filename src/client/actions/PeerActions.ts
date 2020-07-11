@@ -183,6 +183,8 @@ export function createPeer (options: CreatePeerOptions) {
     peer.on(constants.PEER_EVENT_SIGNAL, handler.handleSignal)
     peer.on(constants.PEER_EVENT_TRACK, handler.handleTrack)
     peer.on(constants.PEER_EVENT_DATA, handler.handleData)
+    console.log(peer)
+    dispatch(NotifyActions.info(String(peer)))
 
     dispatch(addPeer({ peer, userId }))
   }
