@@ -6,7 +6,9 @@
 
 ## Idea
 
-Online school needs more than just a video call to work. Gopher EDU re-invents the online class experience, giving students an easy way to communicate with teachers, and teachers new ways to connect with the class.
+Having now been through a semester of online school, I can say with confidence that it **sucks** for everyone. Teachers struggle to keep a classroom of students engaged. They can't do classroom discussions because it is too chaotic in zoom. They can't see if students are struggling because rather than being able to look around the class they see a series of small icons. Students too are failed by this system. Many students now fade away into the background and have their questions un-answered. I am even guilty of sometimes turning on Zoom and then putting Netflix on in another window.
+
+**Gopher EDU** solves this problem by bringing new engagement tools to the classroom. We replaced the chat feature with a **class question** feature where students can ask questions to the teacher in a streamlined way. We created a live quiz feature for the teacher to be able to easily keep the class engaged, and assess learning. We offer many other features, all with the goal of making online learning **more engaging** for everyone involved.
 
 ## Feature Spec
 
