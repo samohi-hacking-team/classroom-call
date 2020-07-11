@@ -1,26 +1,80 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Peer Calls - Video calls to anybody in the world with a private direct connection</title>
-  {{template "header" .}}
-</head>
-<body>
-  <a id="github-ribbon" href="https://github.com/jeremija/peer-calls" target="_blank">
-    <img src="{{.BaseURL}}/res/fork.png" alt="Fork me on GitHub">
-  </a>
+  <head>
+    <title>
+      Peer Calls - Video calls to anybody in the world with a private direct
+      connection
+    </title>
+    <link rel="apple-touch-icon" href="{{.BaseURL}}/res/gopher.jpg" />
+    <link />
+    <link rel="icon" sizes="256x256" href="{{.BaseURL}}/res/gopher.jpg" />
+    <link />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+      integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{.BaseURL}}/static/home.css?{{.Version}}"
+    />
+    <link />
+  </head>
+  <body>
+    <nav class="navbar navbar-light sticky-top bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img
+            src="{{.BaseURL}}/res/gopher.jpg"
+            width="60"
+            height="50"
+            class="d-inline-block align-top"
+            alt=""
+            loading="lazy"
+          />
+        </a>
+      </div>
+    </nav>
+      <div class="mainC">
+        <h1>
+          <img
+            src="{{.BaseURL}}/res/gopher.jpg"
+            width="100px"
+            alt="Peer Calls"
+          />
+        </h1>
+        <form
+          id="form"
+          method="post"
+          action="{{.BaseURL}}/call"
+          autocomplete="off"
+        >
+          <input
+            type="text"
+            value="demo"
+            name="call"
+            placeholder="Class ID"
+            autofocus
+          />
+          <input type="submit" value="Start Session" />
+        </form>
 
-  <div id="container">
-    <form id="form" method="post" action="{{.BaseURL}}/call" autocomplete="off">
-      <h1>
-        <img src="{{.BaseURL}}/res/peer-calls.svg" width="100%" alt="Peer Calls">
-      </h1>
-      <p>Group peer-to-peer calls for everyone. Create a private room. Share the link.</p>
-      <input type="text" value="" name="call" placeholder="Room ID (Leave empty for random)" autofocus>
-      <input type="submit" value="Start Session">
-    </form>
-  </div>
-
-  <footer>
-    <div>{{.Version}}</div>
-  </footer>
-</body>
+        <footer>
+          <div>{{.Version}}</div>
+        </footer>
+      </div>
+    
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+      integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
