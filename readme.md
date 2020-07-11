@@ -33,3 +33,6 @@ Online school needs more than just a video call to work. Gopher EDU re-invents t
 - [x] External Load Balancer Configuration
 - [x] WebRTC + Redux configuration
 
+### Open Source Creds
+We based our project on the [Peer Calls](https://github.com/peer-calls/peer-calls) Project
+
