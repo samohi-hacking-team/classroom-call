@@ -166,7 +166,7 @@ extends React.PureComponent<MediaProps, MediaComponentState> {
         </div>
 
         <button type='submit' disabled={!props.joinEnabled}>
-          Join Call
+          Join Class
         </button>
 
         {this.state.error && (

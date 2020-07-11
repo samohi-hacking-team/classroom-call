@@ -24,7 +24,7 @@
     "test:watch": "jest --watch",
     "js": "webpack --config webpack.prod.js --optimize-minimize",
     "js:watch": "webpack --config webpack.dev.js --watch",
-    "css": "node-sass ./src/sass/style.sass -o ./build/",
+    "css": "node-sass ./src/sass/style.sass -o ./build/ & node-sass ./src/sass/home.sass -o ./build/",
     "css:watch": "npm run css && node-sass --watch ./src/sass/style.sass -o ./build/",
     "lint": "eslint --ext ts,tsx .",
     "lint:fix": "eslint --ext ts,tsx --fix .",

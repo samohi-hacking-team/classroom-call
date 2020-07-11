@@ -44,20 +44,25 @@
             width="100px"
             alt="Peer Calls"
           />
+          Gopher EDU
         </h1>
         <form
           id="form"
           method="post"
-          action="{{.BaseURL}}/call"
+          action="{{.BaseURL}}/class"
           autocomplete="off"
         >
-          <input
+        <select name="call" value="swerdlow">
+          <option value="swerdlow">Mr. Swerdlow</option>
+          <option value="zwang">Dr. Zwang</option>
+        </select>
+          <!-- <input
             type="text"
             value="demo"
             name="call"
             placeholder="Class ID"
             autofocus
-          />
+          /> -->
           <input type="submit" value="Start Session" />
         </form>
 

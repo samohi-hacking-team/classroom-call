@@ -67,7 +67,7 @@ func Test_routeIndex(t *testing.T) {
 	mux.ServeHTTP(w, r)
 
 	require.Equal(t, 200, w.Code)
-	require.Regexp(t, "action=\"/test/call\"", w.Body.String())
+	require.Regexp(t, "action=\"/test/class\"", w.Body.String())
 }
 
 func Test_routeIndex_noBaseURL(t *testing.T) {
@@ -81,7 +81,7 @@ func Test_routeIndex_noBaseURL(t *testing.T) {
 	mux.ServeHTTP(w, r)
 
 	require.Equal(t, 200, w.Code)
-	require.Regexp(t, "action=\"/call\"", w.Body.String())
+	require.Regexp(t, "action=\"/class\"", w.Body.String())
 }
 
 func Test_routeNewCall_name(t *testing.T) {
@@ -91,13 +91,13 @@ func Test_routeNewCall_name(t *testing.T) {
 	mux := server.NewMux(loggerFactory, "/test", "v0.0.0", mesh(), iceServers, mrm, trk, prom())
 	w := httptest.NewRecorder()
 	reader := strings.NewReader("call=my room")
-	r := httptest.NewRequest("POST", "/test/call", reader)
+	r := httptest.NewRequest("POST", "/test/class", reader)
 	r.Header.Set("Content-Type", "application/x-www-form-urlencoded")
 
 	mux.ServeHTTP(w, r)
 
 	require.Equal(t, 302, w.Code, "expected 302 redirect")
-	require.Equal(t, "/test/call/my%20room", w.Header().Get("Location"))
+	require.Equal(t, "/test/class/my%20room", w.Header().Get("Location"))
 }
 
 func Test_routeNewCall_random(t *testing.T) {
@@ -106,14 +106,14 @@ func Test_routeNewCall_random(t *testing.T) {
 	defer mrm.close()
 	mux := server.NewMux(loggerFactory, "/test", "v0.0.0", mesh(), iceServers, mrm, trk, prom())
 	w := httptest.NewRecorder()
-	r := httptest.NewRequest("POST", "/test/call", nil)
+	r := httptest.NewRequest("POST", "/test/class", nil)
 	r.Header.Set("Content-Type", "application/x-www-form-urlencoded")
 
 	mux.ServeHTTP(w, r)
 
 	uuid := "[0-9a-z-A-Z]+$"
 	require.Equal(t, 302, w.Code, "expected 302 redirect")
-	require.Regexp(t, "/test/call/"+uuid, w.Header().Get("Location"))
+	require.Regexp(t, "/test/class/"+uuid, w.Header().Get("Location"))
 }
 
 func Test_routeCall(t *testing.T) {
@@ -125,7 +125,7 @@ func Test_routeCall(t *testing.T) {
 	}}
 	mux := server.NewMux(loggerFactory, "/test", "v0.0.0", mesh(), iceServers, mrm, trk, prom())
 	w := httptest.NewRecorder()
-	r := httptest.NewRequest("GET", "/test/call/abc", nil)
+	r := httptest.NewRequest("GET", "/test/class/abc", nil)
 	mux.ServeHTTP(w, r)
 	assert.Equal(t, http.StatusOK, w.Code)
 	assert.Regexp(t, "id=\"baseUrl\" value=\"/test\"", w.Body.String())

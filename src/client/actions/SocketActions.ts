@@ -88,6 +88,7 @@ export interface HandshakeOptions {
   nickname: string
   userId: string
   stream?: MediaStream
+  isTeacher: boolean
 }
 
 export function handshake (options: HandshakeOptions) {

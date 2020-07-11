@@ -103,8 +103,8 @@ func NewMux(
 		router.Get("/", withGauge(prometheusHomeViewsTotal, renderer.Render(mux.routeIndex)))
 		router.Handle("/static/*", static(baseURL+"/static", packr.NewBox("../build")))
 		router.Handle("/res/*", static(baseURL+"/res", packr.NewBox("../res")))
-		router.Post("/call", withGauge(prometheusCallJoinTotal, mux.routeNewCall))
-		router.Get("/call/{callID}", withGauge(prometheusCallViewsTotal, renderer.Render(mux.routeCall)))
+		router.Post("/class", withGauge(prometheusCallJoinTotal, mux.routeNewCall))
+		router.Get("/class/{classID}", withGauge(prometheusCallViewsTotal, renderer.Render(mux.routeCall)))
 		router.Get("/manifest.json", func(w http.ResponseWriter, r *http.Request) {
 			w.Header().Set("Content-Type", "application/json")
 			w.Write(manifest)
@@ -158,7 +158,7 @@ func (mux *Mux) routeNewCall(w http.ResponseWriter, r *http.Request) {
 	if callID == "" {
 		callID = NewUUIDBase62()
 	}
-	url := mux.BaseURL + "/call/" + url.PathEscape(callID)
+	url := mux.BaseURL + "/class/" + url.PathEscape(callID)
 	http.Redirect(w, r, url, 302)
 }
 
