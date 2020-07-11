@@ -13,6 +13,8 @@ export const valueOf = (id: string) => {
 export const baseUrl = valueOf('baseUrl')!
 export const callId = valueOf('callId')!
 export const userId = valueOf('userId')!
+export const teacherID = valueOf('teacherID')!
+
 export const iceServers = JSON.parse(valueOf('iceServers')!)
 export const nickname = valueOf('nickname')!
 export const network = valueOf('network')!

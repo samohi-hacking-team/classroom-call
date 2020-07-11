@@ -10,6 +10,10 @@ export interface NicknamesSetAction {
 }
 
 export function setNicknames(payload: NicknamesSetPayload): NicknamesSetAction {
+  console.log('SETTING NICKNAMES')
+  console.log(payload)
+  
+
   return {
     type: NICKNAMES_SET,
     payload,

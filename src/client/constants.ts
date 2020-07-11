@@ -34,6 +34,9 @@ export const MEDIA_PLAY = 'MEDIA_PLAY'
 export const NICKNAMES_SET = 'NICKNAMES_SET'
 export const NICKNAME_REMOVE = 'NICKNAME_REMOVE'
 
+export const TEACHER_SET = 'TEACHER_SET'
+export const TEACHER_REMOVE = 'TEACHER_REMOVE'
+
 export const PEER_ADD = 'PEER_ADD'
 export const PEER_REMOVE = 'PEER_REMOVE'
 
