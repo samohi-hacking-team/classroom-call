@@ -1,0 +1,1 @@
+![Gopher EDU](https://github.com/cheezbit/classroom-call/blob/master/res/gopher.png)
