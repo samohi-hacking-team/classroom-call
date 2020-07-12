@@ -10,7 +10,7 @@ Having now been through a semester of online school, I can say with confidence t
 
 Students too are struggling in this new system. Many students fade  into the background, their questions go un-asked or un-answered.  Others log in to Zoom then put Netflix or another program on in another window.
 
-**Gopher EDU** aims to address the problems posed by remote learning by bringing new engagement tools to the classroom. We replaced the chat feature with a class question feature so students can ask questions in a more streamlined way. We created a live quiz feature to help teachers  keep their classes engaged and better assess learning. We offer many other features, all with the goal of making online learning more engaging for everyone involved.
+**Gopher EDU** aims to address the problems posed by remote learning by bringing new engagement tools to the classroom. We want to replace the chat feature with a class question feature so students can ask questions in a more streamlined way. We envision a live quiz feature to help teachers keep their classes engaged and better assess learning. We aim on offering many other features, all with the goal of making online learning more engaging for everyone involved.
 
 
 
@@ -23,7 +23,7 @@ Students too are struggling in this new system. Many students fade  into the bac
 | Question Live Feed        | Zoom chat is disorganized. We envision an easy way for students to ask questions, that works in the same vane as Instagram or Facebook live. Teachers can choose to show or hide questions, or pin questions for discussion. Students can like questions if they want them to be addressed.  | In progress     |
 | Teacher Live Assessment   | The teacher can give a live multiple choice question, to keep students engaged, and to gage class understanding. They should be able to set time limits in a jeopardy or Kahoot fashion.                                                                                                     | In progress     |
 | Group students            | Break class into discussion groups button                                                                                                                                                                                                                                                    | ❌     |
-| Student presentation mode | Teacher should be able to give students the ability to get center focus for questions.                                                                                                                                                                                                       | ❌     |
+|  Presentation modes | Teacher should be able to give students the ability to get center focus for questions. By default the teacher should have presentation mode                                                                                                                                                                                                       |  Teacher presentation mode is done -- student presentation mode is in progress     |
 | Full asessments           | Teachers should be able to run assessments through the platform during, before, or after a call.                                                                                                                                                                                             | ❌      |
 ## Tech Stack 
 
