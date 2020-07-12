@@ -42,7 +42,7 @@ Students too are struggling in this new system. Many students fade  into the bac
 - [x] WebRTC + Redux configuration
 
 ### Branding
-<img src="https://github.com/cheezbit/classroom-call/artboard.png"/>
+<img src="https://github.com/cheezbit/classroom-call/blob/master/artboard.png"/>
 
 ### Open Source Creds
 We based our project on the [Peer Calls](https://github.com/peer-calls/peer-calls) Project
