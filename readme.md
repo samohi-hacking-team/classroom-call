@@ -10,7 +10,7 @@ Having now been through a semester of online school, I can say with confidence t
 
 Students too are struggling in this new system. Many students fade  into the background, their questions go un-asked or un-answered.  Others log in to Zoom then put Netflix or another program on in another window.
 
-**Gopher EDU** aims to address the problems posed by remote learning by bringing new engagement tools to the classroom. We replaced the chat feature with a class question feature so students can ask questions in a more streamlined way. We created a live quiz feature to help teachers  keep their classes engaged and better assess learning. We offer many other features, all with the goal of making online learning more engaging for everyone involved.
+**Gopher EDU** aims to address the problems posed by remote learning by bringing new engagement tools to the classroom. We want to replace the chat feature with a class question feature so students can ask questions in a more streamlined way. We envision a live quiz feature to help teachers keep their classes engaged and better assess learning. We aim on offering many other features, all with the goal of making online learning more engaging for everyone involved.
 
 
 
