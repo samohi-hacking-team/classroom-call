@@ -12,7 +12,7 @@ Students too are struggling in this new system. Many students fade  into the bac
 
 **Gopher EDU** aims to address the problems posed by remote learning by bringing new engagement tools to the classroom. We want to replace the chat feature with a class question feature so students can ask questions in a more streamlined way. We envision a live quiz feature to help teachers keep their classes engaged and better assess learning. We aim on offering many other features, all with the goal of making online learning more engaging for everyone involved.
 
-### Seen the [Product Video](https://youtu.be/UANFYd6Wy1k)
+### See the [Product Video](https://youtu.be/UANFYd6Wy1k)
 
 
 
