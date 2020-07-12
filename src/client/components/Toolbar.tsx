@@ -9,7 +9,6 @@ import { LocalStream } from '../reducers/streams'
 import { callId } from '../window'
 import { AudioDropdown, VideoDropdown } from './DeviceDropdown'
 import { ToolbarButton } from './ToolbarButton'
-
 export interface ToolbarProps {
   dialState: DialState
   nickname: string
@@ -90,7 +89,7 @@ export default class Toolbar extends React.PureComponent<
   copyInvitationURL = async () => {
     const { nickname } = this.props
     const link = location.href
-    const text = `${nickname} has invited you to a meeting on Peer Calls`
+    const text = `${nickname} has invited you to a class on Gopher EDU`
     if (canShare(navigator)) {
       await navigator.share({
         title: 'Peer Call',
@@ -123,7 +122,7 @@ export default class Toolbar extends React.PureComponent<
     const isInCall = this.props.dialState === DIAL_STATE_IN_CALL
 
     const className = classnames('toolbar', {
-      'toolbar-hidden': this.props.chatVisible || this.state.hidden,
+      'toolbar-hidden': false || this.state.hidden,
     })
 
     return (

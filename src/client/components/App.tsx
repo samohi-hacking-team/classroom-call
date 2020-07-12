@@ -83,7 +83,10 @@ export default class App extends React.PureComponent<AppProps, AppState> {
     })
 
     const { localStreams } = this.props.streams
-
+    const testTest = ()=>{
+      //alert('COMING SOOn')
+      console.log('wattt')
+    }
     return (
       <div className="app">
         <Toolbar
@@ -91,7 +94,8 @@ export default class App extends React.PureComponent<AppProps, AppState> {
           dialState={this.props.dialState}
           messagesCount={messagesCount}
           nickname={nicknames[constants.ME]}
-          onToggleChat={this.handleToggleChat}
+          onToggleChat={()=>testTest()}
+          //onToggleChat={testTest()}
           onHangup={this.onHangup}
           desktopStream={localStreams[StreamTypeDesktop]}
           onGetDesktopStream={this.props.getDesktopStream}
