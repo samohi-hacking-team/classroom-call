@@ -2,12 +2,11 @@
 <html>
   <head>
     <title>
-      Peer Calls - Video calls to anybody in the world with a private direct
-      connection
+      Gopher EDU
     </title>
-    <link rel="apple-touch-icon" href="{{.BaseURL}}/res/gopher.jpg" />
+    <link rel="apple-touch-icon" href="{{.BaseURL}}/res/gopher.png" />
     <link />
-    <link rel="icon" sizes="256x256" href="{{.BaseURL}}/res/gopher.jpg" />
+    <link rel="icon" sizes="256x256" href="{{.BaseURL}}/res/gopher.png" />
     <link />
     <link
       rel="stylesheet"
@@ -21,56 +20,46 @@
       href="{{.BaseURL}}/static/home.css?{{.Version}}"
     />
     <link />
+    
   </head>
   <body>
-    <nav class="navbar navbar-light sticky-top bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img
-            src="{{.BaseURL}}/res/gopher.jpg"
-            width="60"
-            height="50"
-            class="d-inline-block align-top"
-            alt=""
-            loading="lazy"
-          />
-        </a>
-      </div>
-    </nav>
-      <div class="mainC">
-        <h1>
-          <img
-            src="{{.BaseURL}}/res/gopher.jpg"
-            width="100px"
-            alt="Peer Calls"
-          />
-          Gopher EDU
-        </h1>
-        <form
-          id="form"
-          method="post"
-          action="{{.BaseURL}}/class"
-          autocomplete="off"
-        >
-        <select name="call" value="swerdlow">
-          <option value="swerdlow">Mr. Swerdlow</option>
-          <option value="zwang">Dr. Zwang</option>
-        </select>
-          <!-- <input
-            type="text"
-            value="demo"
-            name="call"
-            placeholder="Class ID"
-            autofocus
-          /> -->
-          <input type="submit" value="Start Session" />
-        </form>
+    <div class="mainC">
+      <h1 id="topHeader">
+        Gopher EDU
+      </h1>
+      <form
+        id="form"
+        method="post"
+        action="{{.BaseURL}}/class"
+        autocomplete="off"
+      >
+        <input type="text"
+        value="demo"
+        name="call"
+        class="textInput"
+        placeholder="Class ID"
+        autofocus>
+        
+        <span class="bar"></span>
+        <input type="submit" value="Join Class" />
+      </form>
+    <footer>
+      <img src="{{.BaseURL}}/res/gopher.png"  alt="Peer Calls" />
+    </footer>
+  </div>   
+  <div class="tech">
+    <h1>Tech Stack</h1>
+    <h2>Backend</h2>
 
-        <footer>
-          <div>{{.Version}}</div>
-        </footer>
+    <div class="row">
+      <div class="col-md-4">
+        <h3>Kubernetes</h3>
+        <img src="https://github.com/cheezbit/classroom-call/blob/master/readmeImages/kub.png?raw=true"></img>
       </div>
-    
+      <div class="col-md-4">.col-md-4</div>
+      <div class="col-md-4">.col-md-4</div>
+    </div>
+  </div> 
     <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
       integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"

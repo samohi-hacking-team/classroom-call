@@ -137,7 +137,9 @@ const workerFunc = (
         senderId,
         chunk,
       }
-
+      console.log('CHUNKUS')
+      console.log(chunkEvent)
+      console.log(chunk.buffer)
       self.postMessage(chunkEvent, [chunk.buffer])
 
       readOffset += readSize
