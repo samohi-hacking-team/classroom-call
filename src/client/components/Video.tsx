@@ -1,10 +1,10 @@
 import React, { ReactEventHandler } from 'react'
 import classnames from 'classnames'
 import { StreamWithURL } from '../reducers/streams'
-import { Dropdown } from './Dropdown'
+// import { Dropdown } from './Dropdown'
 import { WindowState } from '../reducers/windowStates'
 import { MinimizeTogglePayload } from '../actions/StreamActions'
-import { MdCrop, MdZoomIn, MdZoomOut, MdMenu } from 'react-icons/md'
+// import { MdCrop, MdZoomIn, MdZoomOut, MdMenu } from 'react-icons/md'
 
 export interface VideoProps {
   onMinimizeToggle: (payload: MinimizeTogglePayload) => void
@@ -59,6 +59,10 @@ export default class Video extends React.PureComponent<VideoProps> {
       v.style.objectFit = v.style.objectFit ? '' : 'contain'
     }
   }
+
+  cleanTeacherName = () => {
+    return this.props.nickname.replace('teacher--', '')
+  }
   render () {
     const { mirrored, userId, windowState } = this.props
     const minimized =  windowState === 'minimized'
@@ -78,8 +82,8 @@ export default class Video extends React.PureComponent<VideoProps> {
           ref={this.videoRef}
         />
         <div className='video-footer'>
-          <span className='nickname'>{this.props.nickname}</span>
-          <Dropdown label={<MdMenu />}>
+          <span className='nickname'>{this.cleanTeacherName()}</span>
+          {/* <Dropdown label={<MdMenu />}>
             <li className='action-minimize' onClick={this.handleMinimize}>
               {minimized ? <MdZoomIn /> : <MdZoomOut /> }&nbsp;
               {minimized ? 'Maximize': 'Minimize' }
@@ -87,7 +91,7 @@ export default class Video extends React.PureComponent<VideoProps> {
             <li className='action-toggle-fit' onClick={this.handleToggleCover}>
               <MdCrop /> Toggle Fit
             </li>
-          </Dropdown>
+          </Dropdown> */}
         </div>
       </div>
     )

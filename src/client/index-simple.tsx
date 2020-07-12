@@ -95,7 +95,6 @@ socket.on('connect', () => {
     room: callId,
     nickname: 'test',
     userId,
-    isTeacher: false,
   })
 
 })

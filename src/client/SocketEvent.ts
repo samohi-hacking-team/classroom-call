@@ -4,7 +4,6 @@ export interface Ready {
   room: string
   userId: string
   nickname: string
-  isTeacher: boolean
 }
 
 export interface TrackMetadata {

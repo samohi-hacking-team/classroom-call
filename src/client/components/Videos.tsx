@@ -31,7 +31,7 @@ export default class Videos extends React.PureComponent<VideosProps> {
   private gridRef = React.createRef<HTMLDivElement>()
   componentDidUpdate() {
     const videos = this.gridRef.current!
-    .querySelectorAll('.video-container') as unknown as HTMLElement[]
+      .querySelectorAll('.video-container') as unknown as HTMLElement[]
     const size = videos.length
     const x = (1 / Math.ceil(Math.sqrt(size))) * 100
 
@@ -120,20 +120,46 @@ export default class Videos extends React.PureComponent<VideosProps> {
       </div>
     )
 
-    const videosGrid = (
-      <div className="videos videos-grid" key="videos-grid" ref={this.gridRef}>
-        {maximized.map(props => (
-          <Video
-            {...props}
-            key={props.key}
-            onMinimizeToggle={this.props.onMinimizeToggle}
-            play={this.props.play}
-            nickname={getNickname(this.props.nicknames, props.userId)}
-          />
-        ))}
-      </div>
-    )
+    // const videosGrid = (
+    //   <div 
+    //      className="videos videos-grid" 
+    //        key="videos-grid" 
+    //        ref={this.gridRef}>
+    //     {maximized.map(props => (
+    //       <Video
+    //         {...props}
+    //         key={props.key}
+    //         onMinimizeToggle={this.props.onMinimizeToggle}
+    //         play={this.props.play}
+    //         nickname={getNickname(this.props.nicknames, props.userId)}
+    //       />
+    //     ))}
+    //   </div>
+    // )
+    let teacher: StreamProps = maximized[0]
+    for (let index = 0; index < maximized.length; index++) {
+      if (
+        getNickname(this.props.nicknames,
+          maximized[index].userId).startsWith('teacher--')
+      ) {
+        teacher = maximized[index]
+      }
 
-    return [videosToolbar, videosGrid]
+    }
+    const videoC = (props: StreamProps) => {
+      return <div 
+           className="videos videos-grid" 
+             key="videos-grid" 
+             ref={this.gridRef}><Video
+        {...props}
+        key={props.key}
+        onMinimizeToggle={this.props.onMinimizeToggle}
+        play={this.props.play}
+        nickname={getNickname(this.props.nicknames, props.userId)}
+      />
+      </div>
+    }
+
+    return [videosToolbar, videoC(teacher)]
   }
 }
